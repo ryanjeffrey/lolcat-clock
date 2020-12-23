@@ -109,3 +109,5 @@ var partyEvent = function() {
    }
 };
 
+partyEvent();
+
