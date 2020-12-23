@@ -85,3 +85,27 @@ updateClock ();
 
 var oneSecond = 1000;
 setInterval ( updateClock, oneSecond);
+
+/*
+STILL FIGURING THIS BIT OUT
+
+var isPartyTime = false;
+
+var partyEvent = function() {
+   
+   if (isPartyTime === false) {
+      isPartyTime = true;
+      time = partyTime;
+      buttonText = "Party Over";
+      // text in the button should read "Party Over"
+      // color of the button should be "#0A8DAB" (bonus!)
+   }
+   else {
+      isPartyTime = false;
+      time = new Date().getHours();
+      buttonText = "PARTY TIME!";
+      // text in the button should read "PARTY TIME!"
+      // color of the button should be "#222" (bonus!)
+   }
+};
+
