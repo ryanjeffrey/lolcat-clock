@@ -8,6 +8,9 @@ var napTime = 14; // 2PM
 var messageText;
 var isPartyTime = false;
 var partyTimeButton = document.getElementById("partyTimeButton");
+var wakeUpTimeSelector = document.getElementById("wakeUpTimeSelector");
+var lunchTimeSelector = document.getElementById("lunchTimeSelector");
+var napTimeSelector = document.getElementById("napTimeSelector");
 
 var updateClock = function() 
 {
@@ -99,7 +102,7 @@ var partyEvent = function() {
       // text in the button should read "Party Over"
       partyTimeButton.innerText = "Party Over";
       // color of the button should be "#0A8DAB" (bonus!)
-      partyTimeButton.style.backgroundColor = "0A8DAB";
+      partyTimeButton.style.backgroundColor = "#0A8DAB";
     }
    else {
       isPartyTime = false;
@@ -107,9 +110,25 @@ var partyEvent = function() {
       // text in the button should read "PARTY TIME!"
       partyTimeButton.innerText = "PARTY TIME!";
       // color of the button should be "#222" (bonus!)
-      partyTimeButton.style.backgroundColor = "0A8DAB";
+      partyTimeButton.style.backgroundColor = "#222";
    }
 };
 
 partyTimeButton.addEventListener('click', partyEvent);
 
+    // Drop Down Menus For Setting Times
+
+var wakeUpEvent = function()
+{
+    wakeUpTime = wakeUpTimeSelector.value;
+};
+var lunchEvent = function() {
+    lunchTime = lunchTimeSelector.value;
+};
+var napEvent = function() {
+    napTime = napTimeSelector.value;
+};
+    
+wakeUpTimeSelector.addEventListener('change', wakeUpEvent);
+lunchTimeSelector.addEventListener('change', lunchEvent);
+napTimeSelector.addEventListener('change', napEvent);
