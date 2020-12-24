@@ -6,6 +6,8 @@ var lunchTime = 12; // 12PM
 var partyTime = 17; // 5PM
 var napTime = 14; // 2PM
 var messageText;
+var isPartyTime = false;
+var partyTimeButton = document.getElementById("partyTimeButton");
 
 var updateClock = function() 
 {
@@ -86,28 +88,28 @@ updateClock ();
 var oneSecond = 1000;
 setInterval ( updateClock, oneSecond);
 
-/*
-STILL FIGURING THIS BIT OUT
 
-var isPartyTime = false;
+    //Party Time Button
 
 var partyEvent = function() {
    
    if (isPartyTime === false) {
       isPartyTime = true;
       time = partyTime;
-      buttonText = "Party Over";
       // text in the button should read "Party Over"
+      partyTimeButton.innerText = "Party Over";
       // color of the button should be "#0A8DAB" (bonus!)
-   }
+      partyTimeButton.style.backgroundColor = "0A8DAB";
+    }
    else {
       isPartyTime = false;
       time = new Date().getHours();
-      buttonText = "PARTY TIME!";
       // text in the button should read "PARTY TIME!"
+      partyTimeButton.innerText = "PARTY TIME!";
       // color of the button should be "#222" (bonus!)
+      partyTimeButton.style.backgroundColor = "0A8DAB";
    }
 };
 
-partyEvent();
+partyTimeButton.addEventListener('click', partyEvent);
 
